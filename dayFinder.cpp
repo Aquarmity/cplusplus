@@ -9,7 +9,6 @@ int main()
     int year;
     int month;
     int day;
-    int date;
     int leap;
     int anchor; //the day the doomsday lands on
     int century;
@@ -47,21 +46,21 @@ int main()
         case 1:
             if (leapYear == true)
             {
-                day -= 3;
+                day -= 4;
             }
             else
             {
-                day -= 4;
+                day -= 3;
             }
             break;
         case 2:
             if (leapYear == true)
             {
-                day -= 28;
+                day -= 29;
             }
             else
             {
-                day -= 29;
+                day -= 28;
             }
             break;
         case 3:
@@ -96,7 +95,7 @@ int main()
             break;
     }
 
-    day = anchor + (day % 7);
+    day = anchor + (((day % 7) + 7) % 7);
 
     cout << "The date was a ";
     switch (day)
