@@ -11,7 +11,7 @@ int main()
     int day;
     int date;
     int leap;
-    int anchor;
+    int anchor; //the day the doomsday lands on
     int century;
     bool leapYear;
 
@@ -27,7 +27,7 @@ int main()
 
     century = floor(year / 100);
     leap = floor(year - (century * 100)) / 4;
-    anchor = (((5 * (century % 4)) % 7 + 2) + (year - (century * 100)) + leap) % 7;
+    anchor = (((5 * (century % 4)) % 7 + 2) + (year - (century * 100)) + leap) % 7; //First half finds the anchor for the first of the century, second half adjusts for the specific year of the century.
 
     if (year % 4 == 0 && year % 100 != 0)
     {
@@ -42,7 +42,7 @@ int main()
         leapYear = false;
     }
 
-    switch (month)
+    switch (month) //finds distance from a doomsday
     {
         case 1:
             if (leapYear == true)
