@@ -4,7 +4,7 @@ using namespace std;
 
 /*calculates, using A=P(1+r/n)^nt,
   how long it will take for you to have more money than Elon Musk,
-  assuming a net worth of $2.646 billion
+  assuming a net worth of $264.6 billion
 */
 
 int main() {
